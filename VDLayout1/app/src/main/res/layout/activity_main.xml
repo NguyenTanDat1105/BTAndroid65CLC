@@ -23,7 +23,7 @@
             android:layout_height="76dp"
             android:layout_marginTop="150dp"
             android:background="#58ED5E"
-            android:text="EditView"
+            android:text="EDIT"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
