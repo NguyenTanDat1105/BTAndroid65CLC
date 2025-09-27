@@ -126,6 +126,7 @@
         android:text="99"
         android:textColor="#242760"
         android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/icon_location" />
 
@@ -148,6 +149,7 @@
         android:text="20"
         android:textColor="#242760"
         android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/location" />
 
@@ -170,6 +172,7 @@
         android:text="15K"
         android:textColor="#24275F"
         android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="@+id/location" />
 
