@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    //(2). Link biến Java với id tương ứng
+        //(2). Link biến Java với id tương ứng
         edSo1 = findViewById(R.id.edtA);
         edSo2 = findViewById(R.id.edtB);
         Ketqua = findViewById(R.id.edtKetqua);
