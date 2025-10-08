@@ -24,3 +24,21 @@ Homeword in Class
 ---
 [![](https://visitcount.itsvg.in/api?id=NguyenTanDat1105&icon=0&color=0)](https://visitcount.itsvg.in)
 
+## Làm quen Android Studio bằng [HelloAndroid](https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/HelloAndroid)
+- Đây là bài làm demo đầu tiên để làm quen với Android Studio với dự án đơn giản để hiển thị chữ Hello Android
+
+## Làm quen với Layout [Vidu_Layout1](https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/VDLayout1) và [Vidu_Layout2](https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/VDLayout2)
+- Đây là một cái example cho Layout
+
+## [LoginScreenFigma](https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/LoginScreenFigma) và [AboutMe](https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/AboutMe)
+- Đây là bài tập thiết kế giao diện về giới thiệu bản thân theo mẫu [Figma](https://www.figma.com/design/lN2orSHpfyD5x0WH8lOCm4/Untitled?node-id=0-1&p=f&t=NwT1K0EAuj3GDgPe-0)
+- LoginScreen
+  + Giao diện gốc và giao diện khi làm:
+    |Gốc|Đã làm|
+    |---|------|
+    |<img src="Images/LoginScreen_img/LoginScreen_example.jpg" width="150"/>|<img src="Images/LoginScreen_img/z7092902770538_933d99c30e640f27cdd059f7e7cc5fe6.jpg" width="150"/>|
+- AboutMe
+  + Giao diện gốc và giao diện khi làm:
+    |Gốc|Đã làm|
+    |---|------|
+    | <img src="Images/AboutMe_img/Aboutme_example.jpg" width="150"/>|<img src="Images/AboutMe_img/z7092907836546_4d40ccd78f02e8efb0756586541def9a.jpg" width="150"/>
