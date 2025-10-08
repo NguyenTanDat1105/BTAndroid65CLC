@@ -44,4 +44,5 @@ Homeword in Class
     | <img src="Images/AboutMe_img/Aboutme_example.jpg" width="150"/>|<img src="Images/AboutMe_img/z7092907836546_4d40ccd78f02e8efb0756586541def9a.jpg" width="150"/>
 ## [AppTinhToanVoiHaiSo](https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/CacPhepToanSoHoc)
 - App cơ bản tính toán các phép tính với 2 số
-  |<img src = "Images/PhepToan.jpg" width="150"/>
+  |---|
+  |<img src = "Images/PhepToan.jpg" width="150"/>|
