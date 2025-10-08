@@ -36,4 +36,4 @@ Homeword in Class
   + Giao diện gốc và giao diện khi làm:
     |Gốc|Đã làm|
     |---|------|
-    |<img src="Images/LoginScreen_img/LoginScreen_example.jpg" width="150"/>||<img src="Images/LoginScreen_img/z7092902770538_933d99c30e640f27cdd059f7e7cc5fe6.jpg" width="100"/>|
+    |<img src="Images/LoginScreen_img/LoginScreen_example.jpg" width="150"/>|<img src="Images/LoginScreen_img/z7092902770538_933d99c30e640f27cdd059f7e7cc5fe6.jpg" width="150"/>|
