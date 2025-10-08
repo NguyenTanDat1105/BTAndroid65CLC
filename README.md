@@ -34,11 +34,13 @@ Homeword in Class
 - Đây là bài tập thiết kế giao diện về giới thiệu bản thân theo mẫu [Figma](https://www.figma.com/design/lN2orSHpfyD5x0WH8lOCm4/Untitled?node-id=0-1&p=f&t=NwT1K0EAuj3GDgPe-0)
 - LoginScreen
   + Giao diện gốc và giao diện khi làm:
+    
     |Gốc|Đã làm|
     |---|------|
     |<img src="Images/LoginScreen_img/LoginScreen_example.jpg" width="150"/>|<img src="Images/LoginScreen_img/z7092902770538_933d99c30e640f27cdd059f7e7cc5fe6.jpg" width="150"/>|
 - AboutMe
   + Giao diện gốc và giao diện khi làm:
+    
     |Gốc|Đã làm|
     |---|------|
     | <img src="Images/AboutMe_img/Aboutme_example.jpg" width="150"/>|<img src="Images/AboutMe_img/z7092907836546_4d40ccd78f02e8efb0756586541def9a.jpg" width="150"/>
