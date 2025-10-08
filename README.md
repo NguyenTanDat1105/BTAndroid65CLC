@@ -24,7 +24,7 @@ Homeword in Class
 ---
 [![](https://visitcount.itsvg.in/api?id=NguyenTanDat1105&icon=0&color=0)](https://visitcount.itsvg.in)
 
-## Làm quen Android Studio bằng [Hello_Android].(https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/AboutMe)
+## Làm quen Android Studio bằng HelloAndroid
 - Đây là bài làm demo đầu tiên để làm quen với Android Studio với dự án đơn giản để hiển thị chữ Hello Android
 
 ## Làm quen với Layout [Vidu_Layout1].(https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/VDLayout1) và [Vidu_Layout2].(https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/VDLayout2)
