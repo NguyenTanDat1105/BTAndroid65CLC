@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void generateQuestion() {
-        // Tạo 2 số ngẫu nhiên từ 1 đến 50
         num1 = random.nextInt(50) + 1;
         num2 = random.nextInt(50) + 1;
         correctAnswer = num1 + num2;
@@ -84,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Integer> answers = new ArrayList<>();
         answers.add(correctAnswer);
 
-        // Tạo 3 đáp án sai
         while (answers.size() < 4) {
             int wrongAnswer = correctAnswer + random.nextInt(21) - 10; // Sai số từ -10 đến +10
             if (wrongAnswer > 0 && wrongAnswer != correctAnswer && !answers.contains(wrongAnswer)) {
