@@ -15,10 +15,8 @@ import java.util.Collections;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
     private TextView tvQuestion, tvScore;
     private Button btnOption1, btnOption2, btnOption3, btnOption4, btnNext;
-
     private int num1, num2, correctAnswer;
     private int score = 0;
     private int questionCount = 0;
