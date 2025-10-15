@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         chkAsian = findViewById(R.id.chkAsian);
         btnCalculate = findViewById(R.id.btnCalculate);
 
-        // Sự kiện
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
