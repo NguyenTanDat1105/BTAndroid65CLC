@@ -51,7 +51,12 @@ Homeword in Class
   |------------------|
   |<img src = "Images/PhepToan.jpg" width="150"/>|
 ## [AppUnitConverter](https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/UnitConverter)
-- App chuyển đổi đơn giản chuyển đổi tiền tệ từ tiền Việt Nam (VND) sang tiền Mỹ (USD)
+- App chuyển đổi đơn giản chuyển đổi tiền tệ từ tiền Việt Nam (VND) sang tiền Mỹ (USD) và làm bằng cách lắng nghe Ẩn danh
   |Giao diện ứng dụng|
   |------------------|
-  |<img src = "" width="150"/>|
+  |<img src = "Images/UnitConverter_Screen.png" width="150"/>|
+## [AppBMI](https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/bailamthem_TH_Bai2_BasicGUI_BMI)
+- App tính BMI làm bằng lắng nghe Ẩn danh
+  |Giao diện ứng dụng|
+  |------------------|
+  |<img src = "Images/BMI_Screen.png" width="150"/>
