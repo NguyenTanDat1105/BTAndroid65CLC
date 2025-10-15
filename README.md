@@ -45,8 +45,13 @@ Homeword in Class
     |---|------|
     | <img src="Images/AboutMe_img/Aboutme_example.jpg" width="150"/>|<img src="Images/AboutMe_img/z7092907836546_4d40ccd78f02e8efb0756586541def9a.jpg" width="150"/>
 ## [AppTinhToanVoiHaiSo](https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/CacPhepToanSoHoc)
-- App cơ bản tính toán các phép tính với 2 số
+- Học cách xử lý action trong app và ứng dụng vào app cơ bản tính toán các phép tính với 2 số 
   
   |Giao diện ứng dụng|
   |------------------|
   |<img src = "Images/PhepToan.jpg" width="150"/>|
+## [AppUnitConverter](https://github.com/NguyenTanDat1105/BTAndroid65CLC/tree/main/UnitConverter)
+- App chuyển đổi đơn giản chuyển đổi tiền tệ từ tiền Việt Nam (VND) sang tiền Mỹ (USD)
+  |Giao diện ứng dụng|
+  |------------------|
+  |<img src = "" width="150"/>|
