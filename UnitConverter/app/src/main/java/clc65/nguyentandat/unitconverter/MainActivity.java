@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Ánh xạ các View
         editTextUSD = findViewById(R.id.editTextUSD);
         editTextVND = findViewById(R.id.editTextVND);
         btnConvert = findViewById(R.id.btn_convert);
