@@ -13,14 +13,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     ListView lvhocphan;
     // (1) Chuẩn bị nguồn dữ liệu hiển thị
     // -- Khai báo --
-    ArrayList<String> listHocPhan;
     // (2) Tạo Adapter
     ArrayAdapter<String> HPAdapter;
     void TimDK () {
@@ -31,17 +35,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TimDK();
+        // Đọc nội dung trong file JSON
+        String jsonString = Utils.getJsonFromAsset(this, "listHP.json");
+        // Dùng Gson để chuyển JSON thành String
+        Gson gson = new Gson();
+        Type listUserType = new TypeToken<List<String>>(){}.getType();
+        List<String> subjects = gson.fromJson(jsonString, listUserType);
+
         // -- Lấy dữ liệu đưa vào listHocPhan
         // -- LẤY Ở ĐÂU ??? = file, database, internet(Cloud)...
-        listHocPhan = new ArrayList<String>();
-        listHocPhan = getData(); // 1.2
+
         HPAdapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_list_item_1,listHocPhan
+                this, android.R.layout.simple_list_item_1,subjects
         );
         // (3) Gắn Adapter
         lvhocphan.setAdapter(HPAdapter);
         // (4) Thiết lập sự kiện
-        ArrayList<String> finalListHocPhan = listHocPhan;
         lvhocphan.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -56,21 +65,6 @@ public class MainActivity extends AppCompatActivity {
                 String thongbao = " Bạn đã chọn học lại học phần " + HPduocChon;
                 Toast.makeText(MainActivity.this, thongbao, Toast.LENGTH_LONG).show();
             }
-
         });
-    }
-    // 1.1
-    ArrayList<String> getData() {
-        // Code đọc dữ liệu và cất vào biến tạm, trước khi return cho hàm
-        ArrayList<String> dsTenHP = new ArrayList<String>();
-        // Code ở đây
-        // Bài này, ta hard-code, để fake dữ liệu tại đây cho nhanh
-        dsTenHP.add("Kiến trúc và thiết kế phần mềm");
-        dsTenHP.add("Quản lí dự án phần mềm");
-        dsTenHP.add("Lập trình thiết bị di động");
-        dsTenHP.add("Lập trình Python");
-        dsTenHP.add("Phát triển ứng dụng Web 1");
-        dsTenHP.add("Tư tưởng Hồ Chí Minh");
-        return dsTenHP;
     }
 }
