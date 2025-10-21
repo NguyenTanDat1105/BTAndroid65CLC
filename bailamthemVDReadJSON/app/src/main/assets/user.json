@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Alice",
+    "age": 25,
+    "messages": ["Hello", "Welcome"]
+  },
+  {
+    "name": "Bob",
+    "age": 30,
+    "messages": ["Hi", "Good day"]
+  }
+]
