@@ -20,11 +20,9 @@ public class MainActivity extends AppCompatActivity {
     ListView lvhocphan;
     // (1) Chuẩn bị nguồn dữ liệu hiển thị
     // -- Khai báo --
-    ArrayList<String> listHocPhan= new ArrayList<String>();
+    ArrayList<String> listHocPhan;
     // (2) Tạo Adapter
-    ArrayAdapter<String> HPAdapter = new ArrayAdapter<String>(
-            this, android.R.layout.simple_list_item_1,listHocPhan
-        );
+    ArrayAdapter<String> HPAdapter;
     void TimDK () {
         lvhocphan = findViewById(R.id.dshocphan);
     }
@@ -33,12 +31,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TimDK();
-
-
         // -- Lấy dữ liệu đưa vào listHocPhan
         // -- LẤY Ở ĐÂU ??? = file, database, internet(Cloud)...
+        listHocPhan = new ArrayList<String>();
         listHocPhan = getData(); // 1.2
-
+        HPAdapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_list_item_1,listHocPhan
+        );
         // (3) Gắn Adapter
         lvhocphan.setAdapter(HPAdapter);
         // (4) Thiết lập sự kiện
