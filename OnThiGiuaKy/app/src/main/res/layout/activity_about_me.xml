@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/footer_bg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/footer_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/logo"
+            android:layout_width="85dp"
+            android:layout_height="81dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@mipmap/ntu_logo">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/titleAboutMe"
+            android:layout_width="178dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:text="ABOUT ME"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/logo"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/avatar"
+        android:layout_width="182dp"
+        android:layout_height="176dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginBottom="436dp"
+        android:background="@mipmap/avata"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/main"
+        app:layout_constraintVertical_bias="0.15">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="182dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="115dp"
+        android:gravity="center"
+        android:text="Nguyễn Tấn Đạt (65130417)"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatar" />
+
+    <TextView
+        android:id="@+id/tvJob"
+        android:layout_width="216dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="115dp"
+        android:gravity="center"
+        android:text="Sinh viên Đại học Nha Trang"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Name" />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="223dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="115dp"
+        android:drawableStart="@drawable/icon_location"
+        android:gravity="center"
+        android:text="659/10 Lương Định Của - Nha Trang - Khánh Hoà"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvJob" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="231dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginEnd="104dp"
+        android:drawableStart="@android:drawable/sym_action_email"
+        android:gravity="center"
+        android:text="tandat2005nt@gmail.com"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
+
+    <TextView
+        android:id="@+id/tvAboutMe"
+        android:layout_width="324dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="232dp"
+        android:text="Mình là sinh viên Trường Đại học Nha Trang, hiện đang theo hướng lập trình ứng dụng di động. Mình rất yêu thích công nghệ và muốn tạo ra những ứng dụng hữu ích, giúp cuộc sống trở nên tiện lợi hơn. Học lập trình giúp mình khám phá nhiều điều mới mẻ và không ngừng phát triển bản thân mỗi ngày."
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="129dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="132dp"
+        android:backgroundTint="#D8EED2"
+        android:drawableLeft="@drawable/arrow_right_icon"
+        android:text="Quay lại"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
