@@ -108,13 +108,16 @@
             android:layout_height="60dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif"
-            android:text="Tính Điểm TB"
+            android:text="Tính Điểm Trung Bình"
+            android:backgroundTint="#A5CCF8"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:textSize="20dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="300dp"
             android:layout_height="150dp"
-            android:id="@+id/input_kq"
+            android:id="@+id/output_kq"
             android:layout_marginBottom="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -129,7 +132,6 @@
             android:id="@+id/btnBack"
             android:layout_width="129dp"
             android:layout_height="53dp"
-            android:layout_marginEnd="36dp"
             android:layout_marginBottom="132dp"
             android:backgroundTint="#D8EED2"
             android:drawableLeft="@drawable/arrow_right_icon"
