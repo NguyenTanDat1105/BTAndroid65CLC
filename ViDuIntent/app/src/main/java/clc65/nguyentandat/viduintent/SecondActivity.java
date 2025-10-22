@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,8 +24,8 @@ public class SecondActivity extends AppCompatActivity {
         String intNhanDuoc = iNhanDuoc.getStringExtra("ht");
         // 3.Xử lý
             // Set lên TextView
-
-
+        TextView htTen = findViewById(R.id.tvHienThiTen);
+        htTen.setText(intNhanDuoc);
 
         // Nút BACK
         Button btnBack = findViewById(R.id.btnBack);
