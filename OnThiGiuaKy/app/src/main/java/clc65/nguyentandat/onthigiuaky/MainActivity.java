@@ -40,5 +40,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(iAboutMe);
             }
         });
+        btnCN2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iCN2 = new Intent(MainActivity.this, DSMonHocActivity.class);
+                startActivity(iCN2);
+            }
+        });
     }
 }

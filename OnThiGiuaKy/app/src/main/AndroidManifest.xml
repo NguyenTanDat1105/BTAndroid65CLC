@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnThiGiuaKy">
         <activity
+            android:name=".DSMonHocActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MonhocActivity"
+            android:exported="false" />
+        <activity
             android:name=".AverageScoreOfTheSubjectActivity"
             android:exported="false" />
         <activity
