@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnThiGiuaKy">
         <activity
+            android:name=".HoatDongTruongActivity"
+            android:exported="false" />
+        <activity
             android:name=".DSMonHocActivity"
             android:exported="false" />
         <activity
