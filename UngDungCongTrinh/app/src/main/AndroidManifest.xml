@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UngDungCongTrinh">
         <activity
+            android:name=".CongTrinhActivity"
+            android:exported="false" />
+        <activity
             android:name=".GioiThieuActivity"
             android:exported="false" />
         <activity

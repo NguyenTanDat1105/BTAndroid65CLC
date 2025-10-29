@@ -145,7 +145,6 @@
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="132dp"
         android:backgroundTint="#D8EED2"
-        android:drawableLeft="@drawable/arrow_right_icon"
         android:text="Quay lại"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"

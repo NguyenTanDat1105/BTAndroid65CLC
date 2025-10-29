@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btnCongTrinh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent iCongTrinh = new Intent(MainActivity.this, DSVatLieuActivity.class);
+                Intent iCongTrinh = new Intent(MainActivity.this, CongTrinhActivity.class);
                 startActivity(iCongTrinh);
             }
         });
