@@ -39,5 +39,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(iVatLieu);
             }
         });
+        btnCongTrinh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iCongTrinh = new Intent(MainActivity.this, DSVatLieuActivity.class);
+                startActivity(iCongTrinh);
+            }
+        });
+        btnGioiThieu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iGioiThieu = new Intent(MainActivity.this, GioiThieuActivity.class);
+                startActivity(iGioiThieu);
+            }
+        });
     }
 }
