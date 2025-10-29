@@ -30,11 +30,11 @@ public class HoatDongTruongActivity extends AppCompatActivity {
 
     ArrayList<HoatDongModel> getData(){
         ArrayList<HoatDongModel> dsDuLieu = new ArrayList<>();
-        HoatDongModel hd1 = new HoatDongModel("Hoạt động 1", "logo", "Intents - Fragments - RecylerView-Viewpager-Tablayout");
-        HoatDongModel hd2 = new HoatDongModel("Hoạt động 2", "logo", "Intents - Fragments - RecylerView-Viewpager-Tablayout");
-        HoatDongModel hd3 = new HoatDongModel("Hoạt động 3", "logo", "Intents - Fragments - RecylerView-Viewpager-Tablayout");
-        HoatDongModel hd4 = new HoatDongModel("Hoạt động 4", "logo", "Intents - Fragments - RecylerView-Viewpager-Tablayout");
-        HoatDongModel hd5 = new HoatDongModel("Hoạt động 5", "logo", "Intents - Fragments - RecylerView-Viewpager-Tablayout");
+        HoatDongModel hd1 = new HoatDongModel("Hoạt động 1", "ntu_logo", "Intents - Fragments - RecylerView-Viewpager-Tablayout");
+        HoatDongModel hd2 = new HoatDongModel("Hoạt động 2", "ntu_logo", "Intents - Fragments - RecylerView-Viewpager-Tablayout");
+        HoatDongModel hd3 = new HoatDongModel("Hoạt động 3", "ntu_logo", "Intents - Fragments - RecylerView-Viewpager-Tablayout");
+        HoatDongModel hd4 = new HoatDongModel("Hoạt động 4", "ntu_logo", "Intents - Fragments - RecylerView-Viewpager-Tablayout");
+        HoatDongModel hd5 = new HoatDongModel("Hoạt động 5", "ntu_logo", "Intents - Fragments - RecylerView-Viewpager-Tablayout");
         dsDuLieu.add(hd1);
         dsDuLieu.add(hd2);
         dsDuLieu.add(hd3);
