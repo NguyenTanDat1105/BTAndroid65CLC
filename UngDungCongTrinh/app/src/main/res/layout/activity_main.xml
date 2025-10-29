@@ -7,13 +7,83 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/footer_bg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/footer_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/logo"
+            android:layout_width="167dp"
+            android:layout_height="158dp"
+            android:layout_marginTop="32dp"
+            android:background="@mipmap/anhnguoicongnhankhongnen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.264"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/footer_bg">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="408dp"
+        android:layout_height="525dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/footer_bg"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/btnTinhDienTich"
+            android:layout_width="131dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="127dp"
+            android:text="Tính diện tích"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnVatLieu"
+            android:layout_width="143dp"
+            android:layout_height="79dp"
+            android:layout_marginTop="127dp"
+            android:layout_marginEnd="59dp"
+            android:text="Vật liệu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnCongTrinh"
+            android:layout_width="132dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="213dp"
+            android:text="Công trình"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnGioiThieu"
+            android:layout_width="139dp"
+            android:layout_height="77dp"
+            android:layout_marginEnd="61dp"
+            android:layout_marginBottom="213dp"
+            android:text="Giới thiệu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
