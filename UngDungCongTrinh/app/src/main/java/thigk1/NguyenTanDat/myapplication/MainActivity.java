@@ -32,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(iTinhDT);
             }
         });
-
+        btnVatLieu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iVatLieu = new Intent(MainActivity.this, DSVatLieuActivity.class);
+                startActivity(iVatLieu);
+            }
+        });
     }
 }

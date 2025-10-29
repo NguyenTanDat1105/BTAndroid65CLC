@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UngDungCongTrinh">
         <activity
+            android:name=".DSVatLieuActivity"
+            android:exported="false" />
+        <activity
             android:name=".TinhDTichActivity"
             android:exported="false" />
         <activity
