@@ -40,10 +40,11 @@
         android:id="@+id/btnThemSach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="79dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="20dp"
         android:text="Thêm Sách"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="181dp" />
+        app:layout_constraintBottom_toTopOf="@+id/lvDanhSachTenSach"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/edtTenSach"
