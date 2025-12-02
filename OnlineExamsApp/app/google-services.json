@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "508366598612",
+    "project_id": "online-exams-a8a54",
+    "storage_bucket": "online-exams-a8a54.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508366598612:android:3fc605025b0f29c31d6641",
+        "android_client_info": {
+          "package_name": "clc65.nguyentandat.onlineexamsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKK6jTRm4R_65m2krn9m0wfVsGk9wemh0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

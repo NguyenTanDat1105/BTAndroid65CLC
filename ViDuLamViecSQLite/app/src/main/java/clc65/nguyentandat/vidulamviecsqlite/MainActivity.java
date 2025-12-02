@@ -18,91 +18,62 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
+
 public class MainActivity extends AppCompatActivity {
-    //
     SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button bThem = findViewById(R.id.btnThemSach);
 
         //getBookData();
-        ArrayList<String> dsTenSach = getBookName();
-        // Hiện lên ListView
-        ListView listView = findViewById(R.id.lvDanhSachTenSach);
-        ArrayAdapter<String> adapterTenSach = new ArrayAdapter<String>(MainActivity.this,
-                android.R.layout.simple_list_item_1, dsTenSach);
-        listView.setAdapter(adapterTenSach);
-
-        Button bThem = findViewById(R.id.btnThemSach);
+        ArrayList<String> lsName = getNameBook();
+        // Set data to listview
+        ListView listView = findViewById(R.id.lvTenSach);
+        ArrayAdapter<String> adapterNameBook = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,lsName);
+        listView.setAdapter(adapterNameBook);
         bThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Lấy dữ liệu
-                EditText edtTenSach = findViewById(R.id.edtTenSach);
-                String tenSach = edtTenSach.getText().toString();
-
-                EditText edtGiaBan = findViewById(R.id.edtGiaBan);
-                float giaBan = Float.parseFloat(edtGiaBan.getText().toString());
-
-                // Thêm vào DB
+                EditText edtName = findViewById(R.id.edtName);
+                String nameBook = edtName.getText().toString();
+                EditText edtPrice = findViewById(R.id.edtPrice);
+                float priceBook = Float.parseFloat(edtPrice.getText().toString());
+                // ADD DB
                 ContentValues row = new ContentValues();
-                row.put("BookName", tenSach);
-                row.put("Price", giaBan);
-                db = openOrCreateDatabase("books.db", MODE_PRIVATE, null);
-                db.insert("BOOKS", null, row);
+                row.put("BookName",nameBook);
+                row.put("Price",priceBook);
+                db = openOrCreateDatabase("books",MODE_PRIVATE,null);
+                db.insert("BOOKS",null,row);
                 db.close();
-                dsTenSach.add(tenSach);
-                // Làm tươi lại cái ListView
-                adapterTenSach.notifyDataSetChanged();
+                lsName.add(nameBook);
+                adapterNameBook.notifyDataSetChanged();
             }
         });
 
     }
-
-    ArrayList<BOOKS> getBookData () {
-        // Tạo CSDL
-        db = openOrCreateDatabase("books.db", MODE_PRIVATE, null);
-        // Truy vấn dữ liệu
-        String sqlSelectAll = "SELECT * FROM BOOKS";
-        Cursor resultSet = db.rawQuery(sqlSelectAll, null);
-        ArrayList<BOOKS> dsSach = new ArrayList<BOOKS>();
-        resultSet.moveToFirst();
-        while (true){
-            // Lấy dữ liệu của dòng/bản ghi hiện tại, trả bởi resultSet
-            int maSach = resultSet.getInt(0);
-            String tenSach = resultSet.getString(1);
-            int soTrang = resultSet.getInt(2);
-            float giaBan = resultSet.getFloat(3);
-            String moTa = resultSet.getString(4);
-            // Gói vào 1 đối tượng ==> tạo 1 thực thể/lớp có cấu trúc tương đương
-            BOOKS book = new BOOKS(maSach, tenSach, soTrang, giaBan, moTa);
-            // Ở bài demo này, ta chỉ hiện ra tên sách lên ListView
-            // Thêm vào 1 biến danh sách
-            // Dùng 1 ArrayList<String> để chứa tên sách
-            dsSach.add(book);
-            // Di chuyển đến bản ghi tiếp theo => nếu đã hết thì thoát khỏi vòng lặp
-            if (resultSet.moveToNext() == false)
-                break;
-        }
-        db.close();
-        return dsSach;
-    }
-
-    ArrayList<String> getBookName (){
+    ArrayList<Book> getBookData(){
         // Create CSDL
         db = openOrCreateDatabase("books",MODE_PRIVATE,null);
         // Truy van
         String sqlSelectAll = "SELECT * FROM BOOKS";
-        Cursor resultSet = db.rawQuery(sqlSelectAll,null);
-        ArrayList<String> dsTenSach = new ArrayList<>();
+        Cursor resultSet = db.rawQuery(sqlSelectAll, null);
+        ArrayList<Book> lsBook = new ArrayList<Book>();
+
         resultSet.moveToFirst();
         while (true){
             // Get data
-            int maSach = resultSet.getInt(0);
+            int idBook = resultSet.getInt(0);
             String nameBook = resultSet.getString(1);
+            int page = resultSet.getInt(2);
+            float price = resultSet.getFloat(3);
+            String description = resultSet.getString(4);
+            // Package object ==> create module class
+            Book book = new Book(idBook,nameBook,page,price,description);
             // Add to list
-            dsTenSach.add(nameBook);
+            lsBook.add(book);
             // Move to next
             resultSet.moveToNext();
             if (resultSet.isAfterLast()){
@@ -110,6 +81,30 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         db.close();
-        return dsTenSach;
+        return lsBook;
     }
+    ArrayList<String> getNameBook(){
+        // Create CSDL
+        db = openOrCreateDatabase("books",MODE_PRIVATE,null);
+        // Truy van
+        String sqlSelectAll = "SELECT * FROM BOOKS";
+        Cursor resultSet = db.rawQuery(sqlSelectAll,null);
+        ArrayList<String> lsNameBook = new ArrayList<>();
+
+        resultSet.moveToFirst();
+        while (true){
+            // Get data
+            String nameBook = resultSet.getString(1);
+            // Add to list
+            lsNameBook.add(nameBook);
+            // Move to next
+            resultSet.moveToNext();
+            if (resultSet.isAfterLast()){
+                break;
+            }
+        }
+        db.close();
+        return lsNameBook;
+    }
+
 }
