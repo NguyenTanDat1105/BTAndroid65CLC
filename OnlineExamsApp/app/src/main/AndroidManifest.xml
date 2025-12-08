@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineExamsApp">
         <activity
+            android:name=".ExamEditor"
+            android:exported="false" />
+        <activity
             android:name=".Exam"
             android:exported="false" />
         <activity
