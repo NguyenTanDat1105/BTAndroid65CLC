@@ -1,5 +1,6 @@
 package clc65.nguyentandat.onlineexamsapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -87,6 +88,34 @@ public class Exam extends AppCompatActivity {
             }
         };
         database.addValueEventListener(listener);
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference ref = database.child("Quizzes").child(quizID)
+                        .child("Answer").child(uid);
+                int totalPoints = oldTotalPoints;
+                int points = 0;
+                for (int i = 0; i < data.length; i++) {
+                    ref.child(String.valueOf((i+1))).setValue(data[i].getSelectedAnswer());
+                    if (data[i].getSelectedAnswer() == data[i].getCorrectAnswer()) {
+                        totalPoints++;
+                        points++;
+                    }
+                }
+                ref.child("Points").setValue(points);
+                int totalquestions = oldTotalQuestions + data.length;
+                database.child("Users").child(uid).child("Total Points").setValue(totalPoints);
+                database.child("Users").child(uid).child("Total Questions").setValue(totalquestions);
+                database.child("Users").child(uid).child("Quizzes Solved").child(quizID).setValue("");
+
+                Intent i = new Intent(Exam.this, Result.class);
+                i.putExtra("Quiz ID", quizID);
+                startActivity(i);
+                finish();
+
+            }
+        });
 
     }
 

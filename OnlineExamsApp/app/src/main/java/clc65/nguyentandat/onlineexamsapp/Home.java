@@ -53,6 +53,7 @@ public class Home extends AppCompatActivity {
         EditText quiz_title = findViewById(R.id.quiz_title);
         EditText start_quiz_id = findViewById(R.id.start_quiz_id);
         ImageView signout = findViewById(R.id.signout);
+        RelativeLayout your_quizzes = findViewById(R.id.your_quizzes);
 
         ValueEventListener listener = new ValueEventListener() {
             @Override
@@ -115,6 +116,24 @@ public class Home extends AppCompatActivity {
                 Intent i = new Intent(Home.this, Exam.class);
                 i.putExtra("Quiz ID", start_quiz_id.getText().toString());
                 start_quiz_id.setText("");
+                startActivity(i);
+            }
+        });
+
+        solvedQuizzes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Home.this, ListQuizzes.class);
+                i.putExtra("Operation", "List Solved Quizzes");
+                startActivity(i);
+            }
+        });
+
+        your_quizzes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Home.this, ListQuizzes.class);
+                i.putExtra("Operation", "List Created Quizzes");
                 startActivity(i);
             }
         });

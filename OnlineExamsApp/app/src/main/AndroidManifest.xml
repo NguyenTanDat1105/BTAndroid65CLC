@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineExamsApp">
         <activity
+            android:name=".ListQuizzes"
+            android:exported="false" />
+        <activity
+            android:name=".Result"
+            android:exported="false" />
+        <activity
             android:name=".ExamEditor"
             android:exported="false" />
         <activity

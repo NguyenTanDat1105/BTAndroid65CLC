@@ -62,7 +62,7 @@ public class Signup extends AppCompatActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    confirm_password.setError("Password doesn't mastch");
+                                    confirm_password.setError("Password doesn't match");
                                     progressDialog.dismiss();
                                 }
                             });
