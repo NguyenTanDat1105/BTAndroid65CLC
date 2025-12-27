@@ -79,7 +79,7 @@ public class Signup extends AppCompatActivity {
                                     public void run() {
                                         progressDialog.dismiss();
                                         Intent i = new Intent(Signup.this, Home.class);
-                                        i.putExtra("User ID", user.getUid());
+                                        i.putExtra("User UID", user.getUid());
                                         startActivity(i);
                                         finish();
                                     }

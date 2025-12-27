@@ -59,7 +59,7 @@ public class Exam extends AppCompatActivity {
                     for (int i = 0; i < num; i++) {
                         DataSnapshot qRef = ref.child("Questions").child(String.valueOf(i));
                         Question question = new Question();
-                        question.setQuestion(qRef.child("Questions").getValue().toString());
+                        question.setQuestion(qRef.child("Question").getValue().toString());
                         question.setOption1(qRef.child("Option 1").getValue().toString());
                         question.setOption2(qRef.child("Option 2").getValue().toString());
                         question.setOption3(qRef.child("Option 3").getValue().toString());
@@ -189,13 +189,13 @@ public class Exam extends AppCompatActivity {
                     option1.setChecked(true);
                     break;
                 case 2:
-                    option1.setChecked(true);
+                    option2.setChecked(true);
                     break;
                 case 3:
-                    option1.setChecked(true);
+                    option3.setChecked(true);
                     break;
                 case 4:
-                    option1.setChecked(true);
+                    option4.setChecked(true);
                     break;
             }
 

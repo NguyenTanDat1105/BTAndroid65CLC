@@ -1,5 +1,7 @@
 package clc65.nguyentandat.onlineexamsapp;
 
+import static android.content.Intent.getIntent;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,7 +44,7 @@ public class Home extends AppCompatActivity {
         progressDialog.show();
 
         Bundle b = getIntent().getExtras();
-        userID = b.getString("User UID:");
+        userID = b.getString("User UID");
 
         TextView name = findViewById(R.id.name);
         TextView total_questions = findViewById(R.id.total_questions);

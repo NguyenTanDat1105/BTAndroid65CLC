@@ -42,7 +42,7 @@ import java.util.Date;
 public class ExamEditor extends AppCompatActivity {
 
     private static ArrayList<Question> data;
-    private RecyclerView listview;
+    private static RecyclerView listview;
     private int quizID;
 
     @Override
@@ -51,7 +51,7 @@ public class ExamEditor extends AppCompatActivity {
         setContentView(R.layout.activity_exam_editor);
 
         Bundle b = getIntent().getExtras();
-        String quizTitle = b.getString("Quiz Title");
+        String quizTitle = b.getString("Quiz title");
 
         TextView title = findViewById(R.id.title);
         title.setText(quizTitle);
@@ -90,11 +90,11 @@ public class ExamEditor extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference ref = database.child("Quizess");
-                ref.child("Cast ID").setValue(quizID);
+                DatabaseReference ref = database.child("Quizzes");
+                ref.child("Last ID").setValue(quizID);
                 ref.child(String.valueOf(quizID)).child("Title").setValue(quizTitle);
                 ref.child(String.valueOf(quizID)).child("Total Questions").setValue(data.size());
-                DatabaseReference qRef = ref.child(String.valueOf(quizID)).child("Question");
+                DatabaseReference qRef = ref.child(String.valueOf(quizID)).child("Questions");
                 for (int i = 0; i < data.size(); i++) {
                     String p = String.valueOf(i);
                     qRef.child(String.valueOf(i)).child("Question").setValue(data.get(i).getQuestion());
@@ -106,13 +106,13 @@ public class ExamEditor extends AppCompatActivity {
                 }
                 database.child("Users").child(
                         FirebaseAuth.getInstance().getCurrentUser().getUid())
-                        .child("Quizess Created").child(String.valueOf(quizID))
+                        .child("Quizzes Created").child(String.valueOf(quizID))
                         .setValue("");
 
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("Quiz ID", String.valueOf(quizID));
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(ExamEditor.this, "Your quiz ID: " + quizID + "copier to clipboard", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ExamEditor.this, "Your quiz ID: " + quizID + " copier to clipboard", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -224,7 +224,7 @@ public class ExamEditor extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull CustomAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-            holder.setIsRecyclable(false);
+            //holder.setIsRecyclable(false);
 
             holder.getQuestion().setText(data.get(position).getQuestion());
             holder.getOption1et().setText(data.get(position).getOption1());
@@ -232,26 +232,35 @@ public class ExamEditor extends AppCompatActivity {
             holder.getOption3et().setText(data.get(position).getOption3());
             holder.getOption4et().setText(data.get(position).getOption4());
 
+            holder.getRadio_group().clearCheck();
             switch (data.get(position).getCorrectAnswer()) {
                 case 1:
                     holder.getOption1rb().setChecked(true);
                     break;
                 case 2:
-                    holder.getOption1rb().setChecked(true);
+                    holder.getOption2rb().setChecked(true);
                     break;
                 case 3:
-                    holder.getOption1rb().setChecked(true);
+                    holder.getOption3rb().setChecked(true);
                     break;
                 case 4:
-                    holder.getOption1rb().setChecked(true);
+                    holder.getOption4rb().setChecked(true);
                     break;
             }
+
+            holder.getQuestion().setTag(position);
+            holder.getOption1et().setTag(position);
+            holder.getOption2et().setTag(position);
+            holder.getOption3et().setTag(position);
+            holder.getOption4et().setTag(position);
 
             holder.getQuestion().addTextChangedListener(new TextWatcher() {
                 @Override
                 public void afterTextChanged(Editable editable) {
-                    data.get(position).setQuestion(editable.toString());
-                }
+                    int pos = (int) holder.getQuestion().getTag();
+                    if (pos >= 0 && pos < data.size()) {
+                        data.get(pos).setQuestion(editable.toString());
+                    }                }
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
                 @Override
@@ -261,8 +270,10 @@ public class ExamEditor extends AppCompatActivity {
             holder.getOption1et().addTextChangedListener(new TextWatcher() {
                 @Override
                 public void afterTextChanged(Editable editable) {
-                    data.get(position).setOption1(editable.toString());
-                }
+                    int pos = (int) holder.getOption1et().getTag();
+                    if (pos >= 0 && pos < data.size()) {
+                        data.get(pos).setOption1(editable.toString());
+                    }                }
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
                 @Override
@@ -272,8 +283,10 @@ public class ExamEditor extends AppCompatActivity {
             holder.getOption2et().addTextChangedListener(new TextWatcher() {
                 @Override
                 public void afterTextChanged(Editable editable) {
-                    data.get(position).setOption2(editable.toString());
-                }
+                    int pos = (int) holder.getOption2et().getTag();
+                    if (pos >= 0 && pos < data.size()) {
+                        data.get(pos).setOption2(editable.toString());
+                    }                }
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
                 @Override
@@ -283,8 +296,10 @@ public class ExamEditor extends AppCompatActivity {
             holder.getOption3et().addTextChangedListener(new TextWatcher() {
                 @Override
                 public void afterTextChanged(Editable editable) {
-                    data.get(position).setOption3(editable.toString());
-                }
+                    int pos = (int) holder.getOption3et().getTag();
+                    if (pos >= 0 && pos < data.size()) {
+                        data.get(pos).setOption3(editable.toString());
+                    }                }
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
                 @Override
@@ -294,8 +309,10 @@ public class ExamEditor extends AppCompatActivity {
             holder.getOption4et().addTextChangedListener(new TextWatcher() {
                 @Override
                 public void afterTextChanged(Editable editable) {
-                    data.get(position).setOption4(editable.toString());
-                }
+                    int pos = (int) holder.getOption4et().getTag();
+                    if (pos >= 0 && pos < data.size()) {
+                        data.get(pos).setOption4(editable.toString());
+                    }                }
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
                 @Override
@@ -305,34 +322,52 @@ public class ExamEditor extends AppCompatActivity {
             holder.getRadio_group().setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(@NonNull RadioGroup group, int checkedId) {
-                    if (holder.getOption1rb().isChecked())
-                        data.get(position).setCorrectAnswer(1);
-                    if (holder.getOption2rb().isChecked())
-                        data.get(position).setCorrectAnswer(2);
-                    if (holder.getOption3rb().isChecked())
-                        data.get(position).setCorrectAnswer(3);
-                    if (holder.getOption4rb().isChecked())
-                        data.get(position).setCorrectAnswer(4);
+                    int pos = holder.getAdapterPosition();
+                    if (pos >= 0 && pos < data.size()) {
+                        if (holder.getOption1rb().isChecked())
+                            data.get(pos).setCorrectAnswer(1);
+                        else if (holder.getOption2rb().isChecked())
+                            data.get(pos).setCorrectAnswer(2);
+                        else if (holder.getOption3rb().isChecked())
+                            data.get(pos).setCorrectAnswer(3);
+                        else if (holder.getOption4rb().isChecked())
+                            data.get(pos).setCorrectAnswer(4);
+                    }
                 }
             });
 
             if (position == (data.size() - 1)) {
                 holder.getNew_question().setVisibility(View.VISIBLE);
 
+                holder.getNew_question().setOnClickListener(null);
+
                 holder.getNew_question().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        int currentSize = data.size();
                         data.add(new Question());
-                        notifyDataSetChanged();
+
+                        // Thông báo có item mới
+                        notifyItemInserted(currentSize);
+
+                        // Cập nhật item hiện tại để ẩn nút
+                        notifyItemChanged(position);
+
+                        // Scroll đến item mới
+                        listview.smoothScrollToPosition(currentSize);
                     }
                 });
+            } else {
+                // Ẩn nút ở các item khác
+                holder.getNew_question().setVisibility(View.GONE);
+                holder.getNew_question().setOnClickListener(null);
             }
 
         }
 
         @Override
         public int getItemCount() {
-            return 0;
+            return arr.size();
         }
     }
 }

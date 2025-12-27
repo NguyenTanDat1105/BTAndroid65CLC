@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
@@ -11,8 +11,9 @@
         android:background="@drawable/grey_background"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="30dp">
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp">
+        <!-- ✅ Giảm từ 20dp/30dp xuống 8dp -->
 
         <EditText
             android:id="@+id/question"
@@ -85,7 +86,7 @@
                 </RadioGroup>
 
             </LinearLayout>
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,9 +150,10 @@
         android:background="@drawable/grey_background"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:visibility="gone">
+        <!-- ✅ Giảm từ 20dp/30dp xuống 8dp -->
 
         <TextView
             android:layout_width="match_parent"

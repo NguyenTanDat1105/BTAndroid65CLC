@@ -59,12 +59,13 @@ public class MainActivity extends AppCompatActivity {
                         auth.signInWithEmailAndPassword(em, pass).addOnCompleteListener(MainActivity.this,
                                 (OnCompleteListener<AuthResult>) task -> {
                             if (task.isSuccessful()) {
+                                FirebaseUser currentUser = auth.getCurrentUser();
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
                                         progressDialog.dismiss();
                                         Intent i = new Intent(MainActivity.this, Home.class);
-                                        i.putExtra("User UID", user.getUid());
+                                        i.putExtra("User UID", currentUser.getUid());
                                         startActivity(i);
                                         finish();
                                     }

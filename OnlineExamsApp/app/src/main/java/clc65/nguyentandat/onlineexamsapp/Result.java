@@ -56,7 +56,7 @@ public class Result extends AppCompatActivity {
                     DataSnapshot ansRef = snapshot.child("Quizzes").child(quizID).child("Answer").child(uid);
                     DataSnapshot qRef = snapshot.child("Quizzes").child(quizID);
                     title.setText(qRef.child("Title").getValue().toString());
-                    int num = Integer.parseInt(qRef.child("Total Question").getValue().toString());
+                    int num = Integer.parseInt(qRef.child("Total Questions").getValue().toString());
                     data = new Question[num];
                     int correctAns = 0;
                     for (int i = 0; i < num; i++) {
@@ -69,7 +69,7 @@ public class Result extends AppCompatActivity {
                         question.setOption4(qRef2.child("Option 4").getValue().toString());
                         question.setSelectedAnswer(Integer.parseInt(
                                 ansRef.child(String.valueOf((i+1))).getValue().toString()));
-                        int ans = Integer.parseInt(qRef2.child("Ans").getValue().toString());
+                        int ans = Integer.parseInt(qRef2.child("Answer").getValue().toString());
                         if (ans == question.getSelectedAnswer())
                             correctAns++;
                         question.setCorrectAnswer(ans);
@@ -140,13 +140,13 @@ public class Result extends AppCompatActivity {
                     option1.setChecked(true);
                     break;
                 case 2:
-                    option1.setChecked(true);
+                    option2.setChecked(true);
                     break;
                 case 3:
-                    option1.setChecked(true);
+                    option3.setChecked(true);
                     break;
                 case 4:
-                    option1.setChecked(true);
+                    option4.setChecked(true);
                     break;
             }
 
